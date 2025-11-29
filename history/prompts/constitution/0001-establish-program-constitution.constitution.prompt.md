@@ -1,31 +1,28 @@
-<!--
-Sync Impact Report:
-Version change: 0.0.0 (template) → 1.0.0 (initial full version)
-List of modified principles:
-  - N/A (new full constitution)
-Added sections:
-  - I. Foundational Principles
-  - II. Learning Objectives & Competencies
-  - III. Hardware Access & Lab Governance
-Removed sections:
+---
+id: 0001
+title: Establish Program Constitution
+stage: constitution
+date: 2025-11-29
+surface: agent
+model: claude-sonnet-4-5-20250929
+feature: none
+branch: main
+user: user
+command: /sp.constitution
+labels: ["docs", "constitution"]
+links:
+  spec: null
+  ticket: null
+  adr: null
+  pr: null
+files:
+  - .specify/memory/constitution.md
+tests:
   - N/A
-Templates requiring updates:
-  - .specify/templates/plan-template.md: ⚠ pending
-  - .specify/templates/spec-template.md: ⚠ pending
-  - .specify/templates/tasks-template.md: ⚠ pending
-  - .specify/templates/commands/sp.constitution.md: ⚠ pending
-  - .specify/templates/commands/sp.phr.md: ⚠ pending
-  - .specify/templates/commands/sp.analyze.md: ⚠ pending
-  - .specify/templates/commands/sp.adr.md: ⚠ pending
-  - .specify/templates/commands/sp.clarify.md: ⚠ pending
-  - .specify/templates/commands/sp.checklist.md: ⚠ pending
-  - .specify/templates/commands/sp.git.commit_pr.md: ⚠ pending
-  - .specify/templates/commands/sp.implement.md: ⚠ pending
-  - .specify/templates/commands/sp.plan.md: ⚠ pending
-  - .specify/templates/commands/sp.specify.md: ⚠ pending
-  - .specify/templates/commands/sp.tasks.md: ⚠ pending
-Follow-up TODOs: None
--->
+---
+
+## Prompt
+
 # Physical AI & Humanoid Robotics
 ## Program Constitution
 
@@ -74,26 +71,52 @@ Upon completion of this program, students will demonstrate mastery in:
 The program operates under a **resource-constrained reality**. High-performance compute, sensors, and robots are shared infrastructure. Access is governed by:
 
 - **First-Come, First-Served Reservation System**: Students book lab resources 48 hours in advance.
+
 - **Equitable Distribution**: No single team monopolizes GPU time, sensors, or robots during the quarter.
-- **Peak vs. Off-Peak Usage**: Students are encouraged to run long training jobs during off-peak hours (nights/weekends).
+
+- **Peak vs. Off-Peak Usage**: Students are encouraged to run long training jobs during off-peak hours (nights/ weekends).
 
 ### 3.2 Hardware Responsibility
 
 Students working with lab hardware agree to:
 
 - **Careful Handling**: Robots, sensors, and workstations are expensive and irreplaceable mid-quarter. Damage due to negligence incurs responsibility.
+
 - **Proper Documentation**: All hardware issues (non-responsive GPUs, USB connection failures, sensor drift) must be logged in the shared lab wiki within 24 hours.
+
 - **Clean Shutdown**: All processes must be cleanly terminated. No force-kills of running simulations or arbitrary unplugging of devices.
+
 - **Calibration & Maintenance**: Students performing experiments with sensors (IMUs, cameras) own the calibration process and document deviations.
 
 ### 3.3 Cloud vs. Local Execution
 
 - **Simulation Training**: Students may use AWS cloud instances (within institutional budget: $205/quarter per cohort) for long-running physics simulations.
-- **Model Deployment**: Physical hardware deployment is prioritized for final integration and testing phases. All deployment to physical robots requires faculty approval.
 
----
+- **Model Deployment
 
-## Governance
-This constitution supersedes all other program practices. Amendments require a formal proposal, review by faculty and student representatives, and documented approval. Versioning follows semantic rules (MAJOR.MINOR.PATCH). Compliance will be reviewed bi-annually.
+## Response snapshot
 
-**Version**: 1.0.0 | **Ratified**: 2025-11-29 | **Last Amended**: 2025-11-29
+The program constitution has been successfully updated to version 1.0.0. This is an initial full version based on the comprehensive content provided.
+
+Please review the following template files to ensure they align with the new constitution:
+- `.specify/templates/plan-template.md`
+- `.specify/templates/spec-template.md`
+- `.specify/templates/tasks-template.md`
+- All command files in `.specify/templates/commands/`
+
+Suggested commit message: `docs: establish program constitution v1.0.0 (initial full version)`
+
+## Outcome
+
+- ✅ Impact: Program constitution updated to v1.0.0, establishing foundational principles, learning objectives, and governance for the Physical AI & Humanoid Robotics capstone program.
+- 🧪 Tests: N/A (documentation update)
+- 📁 Files: .specify/memory/constitution.md updated
+- 🔁 Next prompts: Review linked templates for consistency with new constitution.
+- 🧠 Reflection: Successfully updated the constitution and provided detailed instructions for follow-up consistency checks. The bash script for PHR creation failed, prompting fallback to agent-native file writing.
+
+## Evaluation notes (flywheel)
+
+- Failure modes observed: Bash script for `create-phr.sh` not found.
+- Graders run and results (PASS/FAIL): N/A
+- Prompt variant (if applicable): N/A
+- Next experiment (smallest change to try): Investigate the `create-phr.sh` script path or ensure it's generated/available.
